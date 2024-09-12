@@ -18,7 +18,9 @@ Este projeto foi desenvolvido para resolver problemas críticos enfrentados pela
 
 
 **Tabela de Alunos:** Os dados foram recebidos em um arquivo CSV e inseridos no banco de dados. Foi convertido para parquet e inserido com duckdb no banco.
+
 **Tabela de Repasses:** Dada a grande quantidade de dados, adotei uma abordagem de particionamento por estado. Os dados foram extraídos de uma API em lotes de 100 registros, armazenados localmente para garantir a integridade e continuidade do processo em caso de falhas. Esse método de particionamento permitiu a ingestão paralela dos dados, resultando em uma melhoria significativa na velocidade de processamento.
+
 **Tabela de Escolas Atendidas:** Os dados foram extraídos diretamente de um arquivo e carregados no banco de dados.
 
 
