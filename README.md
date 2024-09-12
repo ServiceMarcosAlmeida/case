@@ -21,6 +21,10 @@ A solução envolve a ingestão de dados de várias fontes, armazenamento em dif
 # Estrutura do Projeto
 **1. ingestao_alunos**
 
-<sub>Descrição: </
-Este script é responsável por ler o arquivo CSV contendo dados dos alunos e inseri-los no banco de dados SQL Server. O script foi projetado para processar e validar os dados antes da inserção, garantindo a integridade dos mesmos.>
+Descrição:Este script é responsável por ler o arquivo CSV contendo dados dos alunos e inseri-los no banco de dados SQL Server. O script foi projetado para processar e validar os dados antes da inserção, garantindo a integridade dos mesmos
 
+_Pontos Técnicos_: 
+
+Leitura e processamento do CSV usando Pandas.
+Validação de dados para evitar inconsistências na base.
+Inserção eficiente no banco de dados usando SQLAlchemy.
