@@ -51,10 +51,18 @@ Inserção no banco de dados SQL Server.
 **4. utils.py** 
 
 Descrição:
-Esse script contém funções genéricas.
+Este script contém funções genéricas.
 
 _Pontos Técnicos_: 
 Usada para reaproveitamento de código.
+
+**4. combined_data.py** 
+
+Descrição:
+Este script Python é projetado para percorrer todas as pastas e subpastas em um diretório especificado, identificar todos os arquivos .parquet, e combiná-los em um único arquivo Parquet. Isso facilita a análise de dados consolidados e a gestão eficiente de grandes conjuntos de dados distribuídos em múltiplos arquivos.
+
+_Pontos Técnicos_: 
+Emprega Pandas para manipulação de dados, PyArrow para leitura e escrita eficiente de arquivos Parquet, e a biblioteca OS para navegação no sistema de arquivos.
 
 
 # Processamento e Armazenamento
