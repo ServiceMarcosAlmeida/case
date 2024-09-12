@@ -6,10 +6,15 @@ Este projeto foi desenvolvido para resolver problemas críticos enfrentados pela
 
 **Tecnologias Utilizadas**
 **Python:** Utilizado para automatizar a ingestão de dados e processar grandes volumes de informações.
+
 **BigQuery:** Plataforma de armazenamento e consulta de dados em nuvem.
+
 **Airflow:** Planejado para rodar pipelines em paralelo, possibilitando a ingestão de dados de todos os estados simultaneamente.
+
 **SQL Server:** Banco de dados utilizado para armazenar os dados extraídos e permitir consultas personalizadas via SQL.
+
 **Power BI:** Ferramenta de visualização de dados utilizada para criar dashboards interativos e apresentar as respostas aos questionamentos levantados no case.
+
 
 
 **Tabela de Alunos:** Os dados foram recebidos em um arquivo CSV e inseridos no banco de dados. Foi convertido para parquet e inserido com duckdb no banco.
