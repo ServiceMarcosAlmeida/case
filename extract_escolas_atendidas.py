@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 import numpy as np
-from utils import salvar_dados_no_sql
+from utils import save_data_sql
 
 ## Caso queira salvar mais dados ajuste o limite
 def obter_todos_os_dados_e_inserir(url_base, tabela, limit=100):
