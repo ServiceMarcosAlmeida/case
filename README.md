@@ -28,7 +28,7 @@ Leitura e processamento do CSV usando Pandas.
 Validação de dados para evitar inconsistências na base.
 Inserção eficiente no banco de dados usando SQLServer.
 
-**2. ingestao_repasses.py**
+**2. getdata_repasse_parquet.py**
 
 Descrição:
 Este script lida com a ingestão de dados da tabela de repasses, que é uma das mais volumosas. A abordagem adotada foi particionar os dados por estado, realizando chamadas à API em lotes de 100 registros para acelerar o processamento.
@@ -39,7 +39,7 @@ Particionamento por estado para paralelização e otimização do processo.
 Salvamento dos dados em pastas organizadas, permitindo a retomada do processo em caso de falhas.
 Inserção no banco de dados e particionamento em BigQuery para análise posterior.
 
-**3. ingestao_escolas.py**
+**3. extract_escolas_atendidas.py**
 
 Descrição:
 Este script é responsável por ler os dados das escolas atendidas, processá-los e salvá-los diretamente no banco de dados. Como essa tabela é menor em comparação com a de repasses, o foco foi na simplicidade e eficiência do processo de ingestão.
