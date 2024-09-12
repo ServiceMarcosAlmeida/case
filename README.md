@@ -4,7 +4,7 @@
 Este projeto foi desenvolvido para resolver problemas críticos enfrentados pela Secretaria do Estado de Mato Grosso do Sul - SED/MS na gestão do Programa Nacional de Alimentação Escolar (PNAE). Os principais desafios identificados incluem a demora na obtenção de dados, prazos não atendidos, e a inconsistência das informações, o que impacta negativamente na tomada de decisões e pode resultar em multas.
 
 
-**Tecnologias Utilizadas**
+# Caracteristicas & Tecnologias Utilizadas
 
 **Python:** Utilizado para automatizar a ingestão de dados e processar grandes volumes de informações.
 
