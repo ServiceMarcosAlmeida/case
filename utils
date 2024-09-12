@@ -1,0 +1,52 @@
+import pyodbc
+from config import DB_HOST, DB_DATABASE, DB_USER, DB_PASSWORD
+
+def connect_sql_server():
+    conn_str = f'DRIVER={{SQL Server}};SERVER={DB_HOST};DATABASE={DB_DATABASE};UID={DB_USER};PWD={DB_PASSWORD}'
+    conexao = pyodbc.connect(conn_str)
+    return conexao
+
+def salvar_dados_no_sql(df, tabela):
+    conexao = connect_sql_server()
+    cursor = conexao.cursor()
+
+    for index, row in df.iterrows():
+        placeholders = ', '.join(['?'] * len(row))
+        columns = ', '.join(row.index)
+        sql = f"INSERT INTO {tabela} ({columns}) VALUES ({placeholders})"
+        cursor.execute(sql, tuple(row))
+
+    conexao.commit()
+    cursor.close()
+    conexao.close()
+
+
+def buscar_registros_existentes(tabela, coluna_chave):
+    conexao = connect_sql_server()
+    cursor = conexao.cursor()
+    
+    query = f"SELECT {coluna_chave} FROM {tabela}"
+    cursor.execute(query)
+    
+    registros = cursor.fetchall()
+    registros_existentes = {registro[0] for registro in registros}
+    
+    cursor.close()
+    conexao.close()
+    
+    return registros_existentes
+
+
+def truncate_table(tabela):
+    conn = connect_sql_server()
+    cursor = conn.cursor()
+    
+    try:
+        cursor.execute(f"TRUNCATE TABLE {tabela}")
+        conn.commit()
+        print(f"Tabela {tabela} truncada com sucesso.")
+    except Exception as e:
+        print(f"Erro ao truncar a tabela {tabela}: {e}")
+    finally:
+        cursor.close()
+        conn.close()
