@@ -30,6 +30,7 @@ Os dados processados foram carregados em um banco de dados SQL Server e, também
 
 **Análise de Performance**
 ***Melhoria de 12% no Tempo de Ingestão:** Mesmo no pior cenário, o tempo de ingestão dos dados foi reduzido em 12%, de 4 para 3,5 dias, representando uma melhoria significativa no processo.
+
 **Ingestão Paralela:** A tabela mais pesada (estado de MG) foi processada em 48h. Com a implementação do Airflow, seria possível reduzir em até 50% o processamento desses
 
 
