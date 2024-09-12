@@ -4,7 +4,7 @@ import numpy as np
 from utils import save_data_sql
 
 ## Caso queira salvar mais dados ajuste o limite
-def obter_todos_os_dados_e_inserir(url_base, tabela, limit=100):
+def get_and_insert_data(url_base, tabela, limit=100):
     offset = 0
     while True:
         url = f"{url_base}&$top={limit}&$skip={offset}"
@@ -28,7 +28,7 @@ def obter_todos_os_dados_e_inserir(url_base, tabela, limit=100):
                 break
             
             # Inserir os dados no banco de dados
-            salvar_dados_no_sql(df, tabela)
+            save_data_sql(df, tabela)
             print(f"{len(df)} registros inseridos na tabela {tabela}.")
             
             # Sem dados novos
@@ -43,24 +43,24 @@ def obter_todos_os_dados_e_inserir(url_base, tabela, limit=100):
         print(f"Progredindo para a próxima página, offset atual: {offset}")
 
 
-def transformar_dados_recursos(df):
-    tipos = {
-        'Co_recursos_repassados': 'int',
-        'Ano': 'str',
-        'Estado': 'str',
-        'Municipio': 'str',
-        'Esfera_governo': 'str',
-        'Modalidade_ensino': 'str',
-        'Vl_total_escolas': 'float'
-    }
+# def transformar_dados_recursos(df):
+#     tipos = {
+#         'Co_recursos_repassados': 'int',
+#         'Ano': 'str',
+#         'Estado': 'str',
+#         'Municipio': 'str',
+#         'Esfera_governo': 'str',
+#         'Modalidade_ensino': 'str',
+#         'Vl_total_escolas': 'float'
+#     }
 
     
-    df['Vl_total_escolas'] = df['Vl_total_escolas'].str.replace(',', '.').astype(float)
+#     df['Vl_total_escolas'] = df['Vl_total_escolas'].str.replace(',', '.').astype(float)
   
-    print("Tipos de dados na coluna 'Vl_total_escolas' após correção:", df['Vl_total_escolas'].apply(type).unique())
+#     print("Tipos de dados na coluna 'Vl_total_escolas' após correção:", df['Vl_total_escolas'].apply(type).unique())
     
-    df = df.astype(tipos)    
-    return df
+#     df = df.astype(tipos)    
+#     return df
 
 
 
@@ -69,4 +69,4 @@ def transformar_dados_recursos(df):
 url_escolas = "https://www.fnde.gov.br/olinda-ide/servico/PDA_Escolas_Atendidas/versao/v1/odata/EscolasAtendidas?$format=json&$select=CodEscolasAtendidas,Ano,UF,Municipio,EsferaGoverno,QtdEscolasAtendidas"
 
 
-obter_todos_os_dados_e_inserir(url_escolas, 'EscolasAtendidas')
+get_and_insert_data(url_escolas, 'EscolasAtendidas')
