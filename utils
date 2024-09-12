@@ -6,8 +6,8 @@ def connect_sql_server():
     conexao = pyodbc.connect(conn_str)
     return conexao
 
-def salvar_dados_no_sql(df, tabela):
-    conexao = connect_sql_server()
+def save_data_sql(df, tabela):
+    conexao = conectar_sql_server()
     cursor = conexao.cursor()
 
     for index, row in df.iterrows():
@@ -21,24 +21,10 @@ def salvar_dados_no_sql(df, tabela):
     conexao.close()
 
 
-def buscar_registros_existentes(tabela, coluna_chave):
-    conexao = connect_sql_server()
-    cursor = conexao.cursor()
-    
-    query = f"SELECT {coluna_chave} FROM {tabela}"
-    cursor.execute(query)
-    
-    registros = cursor.fetchall()
-    registros_existentes = {registro[0] for registro in registros}
-    
-    cursor.close()
-    conexao.close()
-    
-    return registros_existentes
 
 
 def truncate_table(tabela):
-    conn = connect_sql_server()
+    conn = conectar_sql_server()
     cursor = conn.cursor()
     
     try:
