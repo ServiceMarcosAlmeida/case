@@ -65,6 +65,11 @@ Os dados processados foram armazenados em um banco de dados SQL Server e, para d
 
 **Melhoria de 12% no Tempo de Ingestão:** O tempo de ingestão dos dados foi reduzido de 4 para 3,5 dias no pior cenário, representando uma melhoria significativa.
 
-**Ingestão Paralela:** A tabela mais pesada (estado de MG) foi processada em 48 horas. Com o uso de Airflow, seria possível reduzir esse tempo significativamente ao processar dados de múltiplos estados simultaneamente.
+**Ingestão Paralela:** A tabela mais pesada (estado de MG) foi processada em 11 horas. Com o uso de Airflow, seria possível reduzir esse tempo significativamente ao processar dados de múltiplos estados simultaneamente.
+
+![image](https://github.com/user-attachments/assets/ff70d188-d46d-4b19-8cbb-22b7dba9d650)
+
+
+
 
 
