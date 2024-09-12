@@ -5,6 +5,7 @@ Este projeto foi desenvolvido para resolver problemas críticos enfrentados pela
 
 
 **Tecnologias Utilizadas**
+
 **Python:** Utilizado para automatizar a ingestão de dados e processar grandes volumes de informações.
 
 **BigQuery:** Plataforma de armazenamento e consulta de dados em nuvem.
